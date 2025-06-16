@@ -1,0 +1,42 @@
+SPEAKER-LABELED TRANSCRIPT
+==================================================
+
+File: Sample.mp3
+Duration: 133.2s
+Language: Unknown
+Speakers: 2
+Processing Time: 21.6s
+--------------------------------------------------
+
+SPEAKER SUMMARY:
+SPEAKER_01: 32.4s (31.3%), 63 words (30.3%)
+SPEAKER_00: 71.3s (68.7%), 145 words (69.7%)
+
+--------------------------------------------------
+
+TRANSCRIPT:
+
+[00:11 - 00:16] SPEAKER_01: So, what's new Mark? How is your new job going?
+
+[00:17 - 00:24] SPEAKER_00: To be honest, I can't complain. I really love the company that I am working for.
+
+[00:25 - 00:32] SPEAKER_00: My co-workers are all really friendly and helpful. They really help me feel welcome.
+
+[00:33 - 00:42] SPEAKER_00: It's a really energetic and fun atmosphere. My boss is hilarious and he's really flexible.
+
+[00:43 - 00:52] SPEAKER_00: Really? How so? He allows me to come in when I want and make my own hours.
+
+[00:52 - 01:03] SPEAKER_00: I can also leave early if I start early. There is no real dress code either. I can wear jeans and a t-shirt if I want.
+
+[01:04 - 01:15] SPEAKER_01: I can even wear shorts in the summer. Wow. It sounds really cool. I can't stand wearing a suit every day.
+
+[01:15 - 01:26] SPEAKER_00: Which do you prefer? Working late or finishing early? I prefer finishing early. I really enjoy the morning.
+
+[01:27 - 01:36] SPEAKER_00: I love getting up early and going for a run. There's nothing like watching the sunrise while drinking my morning coffee.
+
+[01:37 - 01:49] SPEAKER_01: Really? I am opposite. I love sleeping in. I am most alert in the evenings. I'm a real night owl.
+
+[01:53 - 02:01] SPEAKER_00: Well, you know what they say. The early bird catches the worm. You know, you could be right.
+
+[02:02 - 02:06] SPEAKER_01: Maybe I will try to go to bed a little earlier tonight.
+
