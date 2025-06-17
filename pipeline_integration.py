@@ -1,58 +1,69 @@
-# pipeline_integration.py - Complete Whisper + PyAnnote Pipeline
+# pipeline_integration.py - Complete Pipeline with PyAnnote + NeMo Support
 
 import json
 import os
 import pandas as pd
 import warnings
+import logging
 from pathlib import Path
 from typing import Dict, List, Optional, Union, Tuple
-from tqdm import tqdm
-import numpy as np
 
-# Import our custom engines
+# Suppress ALL unnecessary output
+warnings.filterwarnings("ignore")
+logging.getLogger().setLevel(logging.ERROR)
+os.environ['TRANSFORMERS_VERBOSITY'] = 'error'
+os.environ['SPEECHBRAIN_CACHE'] = '/tmp'
+
+# Import our clean backend engines
 from whisper_engine import WhisperEngine
 from pyannote_engine import PyAnnoteEngine
-
-warnings.filterwarnings("ignore")
+from nemo_engine import NeMoEngine
 
 class SpeechDiarizationPipeline:
     """
-    Complete pipeline combining Whisper transcription with PyAnnote speaker diarization
+    Complete pipeline combining Whisper transcription with speaker diarization
+    Supports both PyAnnote and NeMo engines
     """
     
-    def __init__(self, whisper_model: str = "base", device: str = "auto"):
+    def __init__(self, whisper_model: str = "base", diarization_engine: str = "pyannote", device: str = "auto"):
         """
         Initialize the complete pipeline
         
         Args:
             whisper_model: Whisper model size ('tiny', 'base', 'small', 'medium', 'large')
+            diarization_engine: Diarization engine ('pyannote' or 'nemo')
             device: Device to use ('auto', 'cuda', 'cpu')
         """
         self.whisper_model = whisper_model
+        self.diarization_engine_name = diarization_engine
         self.device = device
         self.whisper_engine = None
         self.diarization_engine = None
         
-        print("🎤 Initializing Speech Diarization Pipeline")
-        print("=" * 50)
-        
+        print(f"🎤 Initializing Speech Pipeline ({diarization_engine.upper()})...")
         self._initialize_engines()
     
     def _initialize_engines(self):
-        """Initialize both Whisper and PyAnnote engines"""
+        """Initialize both engines with minimal output"""
         
         # Initialize Whisper
-        print("🔧 Initializing Whisper...")
+        print("  ⏳ Loading Whisper...")
         self.whisper_engine = WhisperEngine(
             model_size=self.whisper_model,
             device=self.device
         )
         
-        # Initialize PyAnnote  
-        print("\n🔧 Initializing PyAnnote...")
-        self.diarization_engine = PyAnnoteEngine(device=self.device)
+        # Initialize chosen diarization engine
+        if self.diarization_engine_name.lower() == "pyannote":
+            print("  ⏳ Loading PyAnnote...")
+            self.diarization_engine = PyAnnoteEngine(device=self.device)
+        elif self.diarization_engine_name.lower() == "nemo":
+            print("  ⏳ Loading NeMo...")
+            self.diarization_engine = NeMoEngine(device=self.device)
+        else:
+            raise ValueError(f"Unknown diarization engine: {self.diarization_engine_name}")
         
-        print(f"\n✅ Pipeline ready!")
+        print("✅ Pipeline ready!\n")
     
     def process_audio(
         self,
@@ -62,26 +73,16 @@ class SpeechDiarizationPipeline:
         min_speakers: int = 1,
         max_speakers: int = 10
     ) -> Dict:
-        """
-        Process audio file with both transcription and diarization
-        
-        Args:
-            audio_path: Path to audio file
-            language: Language for Whisper (None for auto-detection)
-            num_speakers: Fixed number of speakers (None for auto-detection)
-            min_speakers: Minimum speakers for diarization
-            max_speakers: Maximum speakers for diarization
-            
-        Returns:
-            Combined results dictionary
-        """
+        """Process audio file with both transcription and diarization"""
         
         audio_path = Path(audio_path)
-        print(f"\n🎯 Processing: {audio_path.name}")
-        print("=" * 50)
+        file_size_mb = audio_path.stat().st_size / 1e6
+        
+        print(f"🎯 Processing: {audio_path.name} ({file_size_mb:.1f} MB)")
+        print(f"   Engine: {self.diarization_engine_name.upper()}")
         
         # Step 1: Whisper Transcription
-        print("📝 Step 1: Speech-to-Text (Whisper)")
+        print("  📝 Transcribing speech...")
         whisper_results = self.whisper_engine.transcribe_audio(
             audio_path=audio_path,
             language=language,
@@ -89,7 +90,7 @@ class SpeechDiarizationPipeline:
         )
         
         # Step 2: Speaker Diarization
-        print(f"\n👥 Step 2: Speaker Diarization (PyAnnote)")
+        print(f"  👥 Identifying speakers ({self.diarization_engine_name})...")
         diarization_results = self.diarization_engine.diarize_audio(
             audio_path=audio_path,
             num_speakers=num_speakers,
@@ -98,83 +99,59 @@ class SpeechDiarizationPipeline:
         )
         
         # Step 3: Align and Combine Results
-        print(f"\n🔗 Step 3: Aligning Results")
+        print("  🔗 Aligning transcription with speakers...")
         combined_results = self._align_results(whisper_results, diarization_results)
         
         return combined_results
     
     def _align_results(self, whisper_results: Dict, diarization_results: Dict) -> Dict:
-        """
-        Align Whisper transcription with PyAnnote diarization results
+        """Align Whisper transcription with diarization results"""
         
-        Args:
-            whisper_results: Results from Whisper transcription
-            diarization_results: Results from PyAnnote diarization
-            
-        Returns:
-            Combined results with speaker-labeled segments
-        """
+        # Get segments from both systems
+        whisper_segments = whisper_results['segments']
+        speaker_segments = diarization_results['segments']
         
-        with tqdm(total=100, desc="Aligning segments", bar_format='{desc}: {percentage:3.0f}%|{bar}| {elapsed}') as pbar:
+        # Align each Whisper segment with speaker information
+        aligned_segments = []
+        
+        for w_seg in whisper_segments:
+            w_start, w_end = w_seg['start'], w_seg['end']
+            w_text = w_seg['text'].strip()
             
-            pbar.update(20)
+            # Find best matching speaker segment
+            best_speaker = self._find_speaker_for_segment(
+                w_start, w_end, speaker_segments
+            )
             
-            # Get segments from both systems
-            whisper_segments = whisper_results['segments']
-            speaker_segments = diarization_results['segments']
-            
-            # Align each Whisper segment with speaker information
-            aligned_segments = []
-            
-            pbar.update(30)
-            
-            for w_seg in whisper_segments:
-                w_start, w_end = w_seg['start'], w_seg['end']
-                w_text = w_seg['text'].strip()
-                
-                # Find best matching speaker segment
-                best_speaker = self._find_speaker_for_segment(
-                    w_start, w_end, speaker_segments
-                )
-                
-                # Create aligned segment
-                aligned_segment = {
-                    'start': w_start,
-                    'end': w_end,
-                    'duration': w_end - w_start,
-                    'text': w_text,
-                    'speaker': best_speaker,
-                    'words': w_seg.get('words', [])
-                }
-                
-                aligned_segments.append(aligned_segment)
-            
-            pbar.update(40)
-            
-            # Create summary statistics
-            speaker_stats = self._calculate_speaker_text_stats(aligned_segments)
-            
-            pbar.update(10)
-            
-            # Combine all results
-            combined_results = {
-                'segments': aligned_segments,
-                'speakers': diarization_results['speakers'],
-                'speaker_stats': speaker_stats,
-                'whisper_metadata': whisper_results['metadata'],
-                'diarization_metadata': diarization_results['metadata'],
-                'pipeline_metadata': {
-                    'whisper_model': self.whisper_model,
-                    'total_segments': len(aligned_segments),
-                    'alignment_method': 'overlap_based'
-                }
+            # Create aligned segment
+            aligned_segment = {
+                'start': w_start,
+                'end': w_end,
+                'duration': w_end - w_start,
+                'text': w_text,
+                'speaker': best_speaker,
+                'words': w_seg.get('words', [])
             }
             
-            pbar.set_description("Alignment complete")
+            aligned_segments.append(aligned_segment)
         
-        print(f"✅ Alignment complete!")
-        print(f"   Segments aligned: {len(aligned_segments)}")
-        print(f"   Speakers: {len(diarization_results['speakers'])}")
+        # Create summary statistics
+        speaker_stats = self._calculate_speaker_text_stats(aligned_segments)
+        
+        # Combine all results
+        combined_results = {
+            'segments': aligned_segments,
+            'speakers': diarization_results['speakers'],
+            'speaker_stats': speaker_stats,
+            'whisper_metadata': whisper_results['metadata'],
+            'diarization_metadata': diarization_results['metadata'],
+            'pipeline_metadata': {
+                'whisper_model': self.whisper_model,
+                'diarization_engine': self.diarization_engine_name,
+                'total_segments': len(aligned_segments),
+                'alignment_method': 'overlap_based'
+            }
+        }
         
         return combined_results
     
@@ -184,17 +161,7 @@ class SpeechDiarizationPipeline:
         w_end: float, 
         speaker_segments: List[Dict]
     ) -> str:
-        """
-        Find the best matching speaker for a Whisper segment
-        
-        Args:
-            w_start: Whisper segment start time
-            w_end: Whisper segment end time
-            speaker_segments: List of speaker segments from diarization
-            
-        Returns:
-            Best matching speaker label
-        """
+        """Find the best matching speaker for a Whisper segment"""
         
         best_overlap = 0
         best_speaker = "SPEAKER_UNKNOWN"
@@ -253,46 +220,66 @@ class SpeechDiarizationPipeline:
         return speaker_stats
     
     def save_results(self, results: Dict, output_dir: str, base_name: str):
-        """
-        Save combined results in multiple formats
-        
-        Args:
-            results: Combined results from process_audio()
-            output_dir: Output directory
-            base_name: Base filename (without extension)
-        """
+        """Save combined results in multiple formats"""
         
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
         
-        print(f"\n💾 Saving results...")
+        print("  💾 Saving results...")
         
-        with tqdm(total=4, desc="Saving files", bar_format='{desc}: {n}/{total} files') as pbar:
+        # 1. JSON file with complete data
+        json_path = output_dir / f"{base_name}_complete.json"
+        with open(json_path, 'w', encoding='utf-8') as f:
+            json.dump(results, f, indent=2, ensure_ascii=False, default=str)
+        
+        # 2. Plain Whisper transcript (no speakers)
+        whisper_txt_path = output_dir / f"{base_name}_whisper_transcript.txt"
+        self._save_whisper_transcript(results, whisper_txt_path)
+        
+        # 3. Speaker-labeled transcript 
+        speaker_txt_path = output_dir / f"{base_name}_speaker_transcript.txt"
+        self._save_speaker_transcript(results, speaker_txt_path)
+        
+        # 4. Excel file with multiple sheets
+        excel_path = output_dir / f"{base_name}_analysis.xlsx"
+        self._save_excel_analysis(results, excel_path)
+        
+        # 5. RTTM file for diarization (standard format)
+        rttm_path = output_dir / f"{base_name}_diarization.rttm"
+        self._save_rttm_format(results, rttm_path)
+    
+    def _save_whisper_transcript(self, results: Dict, output_path: Path):
+        """Save plain Whisper transcript as TXT (no speakers)"""
+        
+        with open(output_path, 'w', encoding='utf-8') as f:
+            # Header
+            f.write("WHISPER TRANSCRIPTION\n")
+            f.write("=" * 50 + "\n\n")
             
-            # 1. JSON file with complete data
-            json_path = output_dir / f"{base_name}_complete.json"
-            with open(json_path, 'w', encoding='utf-8') as f:
-                json.dump(results, f, indent=2, ensure_ascii=False, default=str)
-            print(f"💾 Saved: {json_path.name}")
-            pbar.update(1)
+            # Metadata
+            w_meta = results['whisper_metadata']
             
-            # 2. TXT file with speaker-labeled transcript
-            txt_path = output_dir / f"{base_name}_transcript.txt"
-            self._save_speaker_transcript(results, txt_path)
-            print(f"💾 Saved: {txt_path.name}")
-            pbar.update(1)
+            f.write(f"File: {w_meta['file_name']}\n")
+            f.write(f"Duration: {w_meta['audio_duration_seconds']:.1f}s\n")
+            f.write(f"Language: {w_meta.get('language', 'Unknown')}\n")
+            f.write(f"Model: {w_meta['model_size']}\n")
+            f.write(f"Processing Time: {w_meta['processing_time_seconds']:.1f}s\n")
+            f.write(f"Speed Ratio: {w_meta['speed_ratio']:.1f}x real-time\n")
+            f.write("-" * 50 + "\n\n")
             
-            # 3. Excel file with multiple sheets
-            excel_path = output_dir / f"{base_name}_analysis.xlsx"
-            self._save_excel_analysis(results, excel_path)
-            print(f"💾 Saved: {excel_path.name}")
-            pbar.update(1)
-            
-            # 4. RTTM file for diarization (standard format)
-            rttm_path = output_dir / f"{base_name}_diarization.rttm"
-            self._save_rttm_format(results, rttm_path)
-            print(f"💾 Saved: {rttm_path.name}")
-            pbar.update(1)
+            # Plain transcript with timestamps (no speakers)
+            f.write("TRANSCRIPT:\n\n")
+            for segment in results['segments']:
+                start_time = segment['start']
+                end_time = segment['end']
+                text = segment['text']
+                
+                # Format: [MM:SS - MM:SS] Text
+                start_min, start_sec = divmod(start_time, 60)
+                end_min, end_sec = divmod(end_time, 60)
+                
+                f.write(f"[{int(start_min):02d}:{int(start_sec):02d} - {int(end_min):02d}:{int(end_sec):02d}] ")
+                f.write(f"{text}\n\n")
     
     def _save_speaker_transcript(self, results: Dict, output_path: Path):
         """Save speaker-labeled transcript as TXT"""
@@ -305,11 +292,13 @@ class SpeechDiarizationPipeline:
             # Metadata
             w_meta = results['whisper_metadata']
             d_meta = results['diarization_metadata']
+            p_meta = results['pipeline_metadata']
             
             f.write(f"File: {w_meta['file_name']}\n")
             f.write(f"Duration: {w_meta['audio_duration_seconds']:.1f}s\n")
-            f.write(f"Language: {results['whisper_metadata'].get('language', 'Unknown')}\n")
+            f.write(f"Language: {w_meta.get('language', 'Unknown')}\n")
             f.write(f"Speakers: {len(results['speakers'])}\n")
+            f.write(f"Diarization Engine: {p_meta['diarization_engine'].upper()}\n")
             f.write(f"Processing Time: {w_meta['processing_time_seconds']:.1f}s\n")
             f.write("-" * 50 + "\n\n")
             
@@ -348,6 +337,7 @@ class SpeechDiarizationPipeline:
                 ['Number of Speakers', len(results['speakers'])],
                 ['Total Segments', len(results['segments'])],
                 ['Whisper Model', results['pipeline_metadata']['whisper_model']],
+                ['Diarization Engine', results['pipeline_metadata']['diarization_engine'].upper()],
                 ['Processing Time (s)', results['whisper_metadata']['processing_time_seconds']],
                 ['Speed Ratio', f"{results['whisper_metadata']['speed_ratio']:.2f}x"]
             ]
@@ -395,18 +385,43 @@ class SpeechDiarizationPipeline:
                 f.write(f"SPEAKER {filename} 1 {segment['start']:.3f} {segment['duration']:.3f} <NA> <NA> {segment['speaker']} <NA> <NA>\n")
     
     def print_summary(self, results: Dict):
-        """Print summary of results"""
+        """Print clean summary of results"""
         
-        print(f"\n📊 Pipeline Results Summary:")
-        print(f"   File: {results['whisper_metadata']['file_name']}")
-        print(f"   Duration: {results['whisper_metadata']['audio_duration_seconds']:.1f}s")
-        print(f"   Language: {results['whisper_metadata'].get('language', 'Unknown')}")
-        print(f"   Speakers: {len(results['speakers'])}")
-        print(f"   Segments: {len(results['segments'])}")
+        duration = results['whisper_metadata']['audio_duration_seconds']
+        language = results['whisper_metadata'].get('language', 'Unknown')
+        num_speakers = len(results['speakers'])
+        num_segments = len(results['segments'])
+        engine = results['pipeline_metadata']['diarization_engine'].upper()
         
-        print(f"\n👥 Speaker Breakdown:")
-        for speaker, stats in results['speaker_stats'].items():
-            print(f"   {speaker}: {stats['total_duration']:.1f}s ({stats['duration_percentage']:.1f}%), {stats['total_words']} words")
+        print(f"✅ Processing Complete!")
+        print(f"   📄 Duration: {duration:.1f}s")
+        print(f"   🗣️  Language: {language}")
+        print(f"   👥 Speakers: {num_speakers}")
+        print(f"   📝 Segments: {num_segments}")
+        print(f"   🔧 Engine: {engine}")
+        
+        print(f"   📁 Files generated:")
+        print(f"      • Whisper transcript (plain text)")
+        print(f"      • Speaker transcript (with speakers)")
+        print(f"      • Complete data (JSON)")
+        print(f"      • Analysis (Excel)")
+        print(f"      • Diarization (RTTM)")
+        
+        # Show top 2 speakers only
+        sorted_speakers = sorted(
+            results['speaker_stats'].items(), 
+            key=lambda x: x[1]['total_duration'], 
+            reverse=True
+        )
+        
+        print(f"   🎙️  Speaker breakdown:")
+        for speaker, stats in sorted_speakers[:2]:
+            duration_pct = stats['duration_percentage']
+            word_count = stats['total_words']
+            print(f"      {speaker}: {duration_pct:.1f}%, {word_count} words")
+        
+        if len(sorted_speakers) > 2:
+            print(f"      ... and {len(sorted_speakers) - 2} more speakers")
 
 
 def find_audio_files(directory: str = ".") -> List[Path]:
@@ -436,7 +451,6 @@ def select_audio_file() -> Optional[Path]:
     
     if not audio_files:
         print("❌ No audio files found!")
-        print("   Supported: MP3, WAV, MP4, M4A, FLAC, OGG, AAC")
         return None
     
     if len(audio_files) == 1:
@@ -468,51 +482,111 @@ def select_audio_file() -> Optional[Path]:
             return None
 
 
+def select_diarization_engine() -> str:
+    """Let user select diarization engine"""
+    
+    print("\n🔧 Select Diarization Engine:")
+    print("   1. PyAnnote (Recommended) - Fast, reliable")
+    print("   2. NeMo (Advanced) - Higher accuracy, slower")
+    
+    while True:
+        try:
+            choice = input("\nSelect engine (1-2) or Enter for PyAnnote: ").strip()
+            
+            if not choice or choice == "1":
+                return "pyannote"
+            elif choice == "2":
+                return "nemo"
+            else:
+                print("Please enter 1 or 2")
+                
+        except KeyboardInterrupt:
+            print("\n👋 Cancelled")
+            return "pyannote"  # Default
+
+
+def test_setup():
+    """Test if all components are properly configured"""
+    try:
+        import torch
+        import whisper
+        
+        # Test PyAnnote
+        try:
+            from pyannote.audio import Pipeline
+            from huggingface_hub import whoami
+            pyannote_ok = True
+        except Exception:
+            pyannote_ok = False
+        
+        # Test NeMo
+        try:
+            from nemo.collections.asr.models import ClusteringDiarizer
+            nemo_ok = True
+        except Exception:
+            nemo_ok = False
+        
+        if not pyannote_ok and not nemo_ok:
+            return False
+        
+        return True
+    except Exception:
+        return False
+
+
 def main():
-    """Main pipeline execution"""
+    """Main pipeline execution with engine selection"""
     
     try:
-        print("🎤 Speech Diarization Pipeline - Whisper + PyAnnote")
-        print("=" * 60)
+        print("🎤 Speech Diarization Pipeline")
+        print("=" * 40)
+        
+        # Quick setup check
+        if not test_setup():
+            print("❌ Setup incomplete. Run: python test_setup.py")
+            return
         
         # Select audio file
         audio_file = select_audio_file()
         if not audio_file:
             return
         
-        # Configuration
-        WHISPER_MODEL = "base"  # Can be changed to: tiny, small, medium, large
-        OUTPUT_DIR = "output"
+        # Select diarization engine
+        engine = select_diarization_engine()
         
-        # Initialize pipeline
+        print()  # Empty line for clarity
+        
+        # Initialize and run pipeline
         pipeline = SpeechDiarizationPipeline(
-            whisper_model=WHISPER_MODEL,
+            whisper_model="medium", 
+            diarization_engine=engine,
             device="auto"
         )
         
         # Process audio
         results = pipeline.process_audio(
             audio_path=audio_file,
-            language=None,  # Auto-detect
-            num_speakers=None,  # Auto-detect (can set to specific number like 2, 3, etc.)
+            language=None,
+            num_speakers=None,
             min_speakers=1,
             max_speakers=10
         )
         
         # Save results
+        output_dir = "output"
         base_name = audio_file.stem
-        pipeline.save_results(results, OUTPUT_DIR, base_name)
+        pipeline.save_results(results, output_dir, base_name)
         
         # Print summary
         pipeline.print_summary(results)
         
-        print(f"\n🎉 Pipeline completed successfully!")
-        print(f"📁 All files saved in '{OUTPUT_DIR}/' directory")
+        print(f"\n📁 Files saved in '{output_dir}/' directory")
+        print("🎉 Done!")
         
+    except KeyboardInterrupt:
+        print(f"\n👋 Cancelled")
     except Exception as e:
-        print(f"❌ Pipeline failed: {e}")
-        import traceback
-        traceback.print_exc()
+        print(f"❌ Error: {e}")
 
 
 if __name__ == "__main__":
