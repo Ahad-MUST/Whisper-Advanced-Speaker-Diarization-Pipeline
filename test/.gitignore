@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+whisperx_env/
+
+# Audio files
+*.mp3
+*.wav
+*.mp4
+*.m4a
+*.flac
+*.ogg
+
+# Output files
+output/
+logs/
+*.log
+
+# Models (large files)
+models/
+*.pt
+*.bin
+*.safetensors
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

@@ -20,7 +20,7 @@ class WhisperEngine:
     Pure backend implementation with minimal logging
     """
     
-    def __init__(self, model_size: str = "base", device: str = "auto"):
+    def __init__(self, model_size: str = "large-v3", device: str = "auto"):
         """
         Initialize Whisper Engine
         

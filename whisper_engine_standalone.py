@@ -388,7 +388,7 @@ def main():
     """Example usage and testing"""
     
     # Configuration
-    MODEL_SIZE = "base"  # Options: tiny, base, small, medium, large
+    MODEL_SIZE = "large"  # Options: tiny, base, small, medium, large
     OUTPUT_DIR = "output"
     
     try:
