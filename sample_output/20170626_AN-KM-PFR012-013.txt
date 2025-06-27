@@ -1,0 +1,266 @@
+ENHANCED MULTI-ENGINE SPEAKER-LABELED TRANSCRIPT
+🚀 WHISPER + WHISPERX + WAV2VEC2 + MULTI-DIARIZATION
+================================================================================
+
+File: 20170626_AN-KM-PFR012-013_processed_16k.wav
+Duration: 359.9s
+Language: en
+Speakers: 2
+ASR Engine: WHISPER
+ASR Model: large-v3
+Enhanced Features: multilingual, word_timestamps, robust_transcription
+Diarization Engines: speechbrain
+Ensemble Mode: No
+WhisperX Built-in Used: No
+Basic Preprocessing: Applied
+Changes Made: Sample rate: 44100→16000Hz, Peak: 0.295→0.682, RMS: 0.016→0.050
+Processing Effective: Yes
+Engine Agreement: 100.0%
+Total Processing Time: 940.2s
+--------------------------------------------------------------------------------
+
+SPEAKER SUMMARY:
+SPEAKER_01: 241.7s (81.3%), 735 words (84.5%)
+SPEAKER_00: 55.7s (18.7%), 135 words (15.5%)
+SPEAKER_UNKNOWN: 0.0s (0.0%), 0 words (0.0%)
+
+--------------------------------------------------------------------------------
+
+ENHANCED TRANSCRIPT:
+
+[00:00 - 00:09] SPEAKER_01: I was not popular because I was a troublemaker or anything like that, but I was known because
+
+[00:09 - 00:11] SPEAKER_01: I participated in everything.
+
+[00:11 - 00:17] SPEAKER_01: So I knew people or children or kids of my age from different groups.
+
+[00:19 - 00:21] SPEAKER_01: And I was well-liked by the teachers.
+
+[00:21 - 00:26] SPEAKER_01: And I think I was just a pleasant, active child, you know.
+
+[00:30 - 00:33] SPEAKER_00: So, let's put this one short.
+
+[00:33 - 00:36] SPEAKER_00: So, you went to a few different ones.
+
+[00:37 - 00:46] SPEAKER_00: And were there any new conflicts which occurred when you became older,
+
+[00:47 - 00:49] SPEAKER_00: right after you were 12?
+
+[00:50 - 00:51] SPEAKER_00: What do you think?
+
+[00:55 - 00:55] SPEAKER_01: Conflicts?
+
+[00:57 - 00:58] SPEAKER_00: For example?
+
+[00:58 - 00:58] SPEAKER_00: Yeah.
+
+[01:00 - 01:03] SPEAKER_00: In case of the one who was a little bit more conflict,
+
+[01:03 - 01:08] SPEAKER_00: all the time they became a lot in the evening or something like that?
+
+[01:08 - 01:09] SPEAKER_01: Not at all.
+
+[01:10 - 01:15] SPEAKER_01: My parents were, I think both parents were very,
+
+[01:18 - 01:21] SPEAKER_01: I think because it belonged to part of the community as well,
+
+[01:22 - 01:28] SPEAKER_01: we knew what time we can go out to play or to visit friends.
+
+[01:28 - 01:29] SPEAKER_01: And we knew what time.
+
+[01:29 - 01:30] SPEAKER_01: And we expected to come back.
+
+[01:32 - 01:33] SPEAKER_01: So, no.
+
+[01:35 - 01:36] SPEAKER_00: Yeah.
+
+[01:36 - 01:39] SPEAKER_01: There was no reason not to.
+
+[01:41 - 01:42] SPEAKER_01: Yeah, we were happy.
+
+[01:43 - 01:44] SPEAKER_00: Yeah.
+
+[01:46 - 01:48] SPEAKER_01: Yeah, we were good kids.
+
+[01:48 - 01:54] SPEAKER_01: There was no conflicts like, yeah, like such conflicts about, yeah.
+
+[01:56 - 01:56] SPEAKER_00: Yeah.
+
+[01:56 - 01:57] SPEAKER_00: Yeah.
+
+[01:59 - 01:59] SPEAKER_00: Yeah.
+
+[01:59 - 01:59] SPEAKER_UNKNOWN: 
+
+[01:59 - 01:59] SPEAKER_UNKNOWN: 
+
+[01:59 - 01:59] SPEAKER_UNKNOWN: 
+
+[01:59 - 01:59] SPEAKER_UNKNOWN: 
+
+[01:59 - 01:59] SPEAKER_UNKNOWN: 
+
+[01:59 - 01:59] SPEAKER_UNKNOWN: 
+
+[01:59 - 01:59] SPEAKER_UNKNOWN: 
+
+[01:59 - 01:59] SPEAKER_UNKNOWN: 
+
+[01:59 - 01:59] SPEAKER_UNKNOWN: 
+
+[01:59 - 01:59] SPEAKER_UNKNOWN: 
+
+[01:59 - 02:02] SPEAKER_00: I think there were, still, but there was.
+
+[02:02 - 02:04] SPEAKER_00: We were very careful about these conflicts that happened.
+
+[02:04 - 02:04] SPEAKER_UNKNOWN: 
+
+[02:04 - 02:05] SPEAKER_00: So, you could, training honoured.
+
+[02:05 - 02:10] SPEAKER_00: Sort of, yeah.
+
+[02:10 - 02:10] SPEAKER_UNKNOWN: 
+
+[02:12 - 02:13] SPEAKER_01: And so, there were for me, there were Season 8.
+
+[02:13 - 02:13] SPEAKER_01: So, that was been around with my parents,
+
+[02:13 - 02:17] SPEAKER_01: and they were just very THOMON.
+
+[02:17 - 02:18] SPEAKER_01: So, yeah.
+
+[02:18 - 02:19] SPEAKER_01: So, more personal and lovely, but I had a special situation
+
+[02:19 - 02:22] SPEAKER_01: so that I wanted to see you a bit more.
+
+[02:22 - 02:22] SPEAKER_01: I would say, that a bit more nice.
+
+[02:22 - 02:22] SPEAKER_UNKNOWN: 
+
+[02:22 - 02:22] SPEAKER_UNKNOWN: 
+
+[02:23 - 02:26] SPEAKER_01: So, yeah, it was nice.
+
+[02:27 - 02:29] SPEAKER_01: You did a lot of such things.
+
+[02:29 - 02:32] SPEAKER_01: about people and about everything else, you know.
+
+[02:32 - 02:36] SPEAKER_01: So when I told him, it was really funny because when I said to him, you know,
+
+[02:36 - 02:42] SPEAKER_01: I want to go to the UK and he gave me, you know, the support and everything to do so.
+
+[02:42 - 02:48] SPEAKER_01: And I remember the first year, first or second year when I went back and I said to him,
+
+[02:48 - 02:51] SPEAKER_01: because you hear about different kids talking about their experiences,
+
+[02:51 - 02:53] SPEAKER_01: about living abroad and all that stuff.
+
+[02:53 - 02:58] SPEAKER_01: And I said, when I asked to go to UK, just let me go.
+
+[02:58 - 03:01] SPEAKER_01: Oh, you know, how come, you know, you were not worried or anything?
+
+[03:01 - 03:04] SPEAKER_01: He said, no, I knew that I brought you up well.
+
+[03:04 - 03:08] SPEAKER_01: And I knew that you would make the right decisions, you know,
+
+[03:08 - 03:10] SPEAKER_01: and which was right sort of thing, you know.
+
+[03:13 - 03:21] SPEAKER_01: So we had a very open relationship in where I can talk to both parents.
+
+[03:23 - 03:26] SPEAKER_01: Living with my mom, I was closer to my mom, definitely.
+
+[03:28 - 03:34] SPEAKER_01: But I was also close to my dad when I'm with him, you know, when I'm with, yeah,
+
+[03:34 - 03:38] SPEAKER_01: I can talk to him about, I can talk to him.
+
+[03:38 - 03:45] SPEAKER_00: So I didn't ever change, you know.
+
+[03:45 - 03:48] SPEAKER_01: Even when I came to the UK, when I went to the UK,
+
+[03:49 - 03:54] SPEAKER_01: I would speak to them very often on the phone and, yeah.
+
+[03:55 - 03:56] SPEAKER_01: Yeah.
+
+[03:59 - 03:59] SPEAKER_00: But I would talk to my parents about the way that I grew up.
+
+[03:59 - 03:59] SPEAKER_UNKNOWN: 
+
+[03:59 - 03:59] SPEAKER_UNKNOWN: 
+
+[03:59 - 04:02] SPEAKER_00: The way your parents raised you and, like,
+
+[04:02 - 04:07] SPEAKER_00: how do you think it influenced your way of raising your own?
+
+[04:09 - 04:10] SPEAKER_01: Yes, absolutely.
+
+[04:11 - 04:17] SPEAKER_01: I really appreciate the core values that my parents instilled in me.
+
+[04:18 - 04:21] SPEAKER_01: I, and I hang onto that.
+
+[04:21 - 04:26] SPEAKER_01: You know, I hang onto that part of my upbringing and culture.
+
+[04:26 - 04:26] SPEAKER_01: Mm-hmm.
+
+[04:27 - 04:28] SPEAKER_01: Yeah.
+
+[04:28 - 04:33] SPEAKER_01: So things like, I am not, I do not go to church every week.
+
+[04:33 - 04:37] SPEAKER_01: I'm not a church goer, but I believe in the spiritual aspect of life.
+
+[04:37 - 04:39] SPEAKER_01: So I instill that in Nico Robin.
+
+[04:39 - 04:41] SPEAKER_01: So I'll always say to her at night,
+
+[04:41 - 04:43] SPEAKER_01: we'll always say a prayer before going to bed.
+
+[04:44 - 04:47] SPEAKER_01: And I'll always say, okay, Nico Robin, you need to, you know,
+
+[04:47 - 04:50] SPEAKER_01: while praying, I teach her how to pray, you know,
+
+[04:50 - 04:55] SPEAKER_01: about thanking God or the Supreme Being for what we have and things like that.
+
+[04:55 - 04:57] SPEAKER_01: And for asking for, you know,
+
+[04:58 - 04:59] SPEAKER_01: what will you like, you know, what will you like in your life
+
+[04:59 - 05:01] SPEAKER_01: or for protection and things like that.
+
+[05:01 - 05:04] SPEAKER_01: So, and those are the core values for my childhood.
+
+[05:04 - 05:05] SPEAKER_01: So I instill those things in her.
+
+[05:06 - 05:09] SPEAKER_01: I instill in her about respecting people, you know,
+
+[05:09 - 05:10] SPEAKER_01: respecting your elders.
+
+[05:10 - 05:19] SPEAKER_01: And I instill in her about honesty and truth, you know,
+
+[05:19 - 05:22] SPEAKER_01: and that is very, you know, and I always say to her,
+
+[05:22 - 05:24] SPEAKER_01: I said, Nico, the truth will set you free.
+
+[05:24 - 05:27] SPEAKER_01: You know, it will take a long, it might take a long time,
+
+[05:27 - 05:28] SPEAKER_01: but the truth will set you free.
+
+[05:28 - 05:31] SPEAKER_01: And that was a part of our core, that's part of my core values
+
+[05:31 - 05:32] SPEAKER_01: while growing up.
+
+[05:34 - 05:37] SPEAKER_01: So, yeah, it have an absolute effect.
+
+[05:37 - 05:41] SPEAKER_01: And also about education, you know, from right through,
+
+[05:41 - 05:45] SPEAKER_01: you know, Nico went to preschool and, you know,
+
+[05:45 - 05:49] SPEAKER_01: school in different levels and now she's here now.
+
+[05:49 - 05:53] SPEAKER_01: But I also instill to her, Nico, even things like doing her homework,
+
+[05:53 - 05:54] SPEAKER_01: we're doing her homework together.
+
+[05:54 - 05:57] SPEAKER_01: So I would say to Nico, Nico, practice,
+
+[05:58 - 05:59] SPEAKER_01: make perfect, you know, that is what.
+

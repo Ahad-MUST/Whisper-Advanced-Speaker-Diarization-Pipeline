@@ -1,0 +1,479 @@
+ENHANCED MULTI-ENGINE SPEAKER-LABELED TRANSCRIPT
+🚀 WHISPER + WHISPERX + WAV2VEC2 + MULTI-DIARIZATION
+================================================================================
+
+File: Full-20241121_Wassermann-FGR-2420_processed_16k.wav
+Duration: 767.1s
+Language: de
+Speakers: 3
+ASR Engine: WHISPER
+ASR Model: large-v3
+Enhanced Features: multilingual, word_timestamps, robust_transcription
+Diarization Engines: speechbrain
+Ensemble Mode: No
+WhisperX Built-in Used: No
+Basic Preprocessing: Applied
+Changes Made: Sample rate: 44100→16000Hz, Peak: 0.728→0.682, RMS: 0.109→0.142
+Processing Effective: Yes
+Engine Agreement: 100.0%
+Total Processing Time: 1521.6s
+--------------------------------------------------------------------------------
+
+SPEAKER SUMMARY:
+SPEAKER_01: 8.2s (1.3%), 29 words (1.4%)
+SPEAKER_00: 323.4s (51.3%), 1104 words (51.4%)
+SPEAKER_02: 298.4s (47.4%), 1015 words (47.3%)
+SPEAKER_UNKNOWN: 0.0s (0.0%), 0 words (0.0%)
+
+--------------------------------------------------------------------------------
+
+ENHANCED TRANSCRIPT:
+
+[00:02 - 00:04] SPEAKER_01: Hallo, Familie Marathonstelle, Wenzel, hallo.
+
+[00:05 - 00:09] SPEAKER_00: Ja, schönen guten Morgen, Frau Wenzel, Ritter hier. Ich grüße Sie. Wir sind zum Telefonieren verabredet.
+
+[00:10 - 00:11] SPEAKER_00: Ja.
+
+[00:11 - 00:16] SPEAKER_00: Wunderbar. Ihr Kollege auch da? Bei mir stehen zwei Personen im Kalender.
+
+[00:17 - 00:19] SPEAKER_01: Ja, den würde ich gleich mit dazu holen.
+
+[00:19 - 00:25] SPEAKER_00: Ja, alles klar, genau. Ich bin mit meiner Begutachtung relativ am Ende und da mache ich typischerweise nochmal...
+
+[00:25 - 00:26] SPEAKER_01: Ich höre Sie gerade nicht.
+
+[00:27 - 00:27] SPEAKER_00: Gar nicht mehr?
+
+[00:27 - 00:28] SPEAKER_00: Hallo.
+
+[00:28 - 00:29] SPEAKER_00: Ja, ich höre Sie gut.
+
+[00:30 - 00:31] SPEAKER_01: Okay, jetzt geht es wieder.
+
+[00:31 - 00:34] SPEAKER_00: Ja, das kann sein. Ich sitze im Auto, da ist die Verbindung manchmal etwas schlechter.
+
+[00:36 - 00:42] SPEAKER_00: Genau, ich mache im Rahmen meiner Begutachtung am Schluss immer nochmal kurze Rücksprache mit den wesentlichen involvierten Fachkräften,
+
+[00:42 - 00:47] SPEAKER_00: um nochmal aus anderen Blickwinkeln Eindrücke zur Familie zu bekommen.
+
+[00:47 - 00:54] SPEAKER_00: Und da würde ich mich jetzt die nächsten 10, 15 Minuten ganz gerne mit der Person vor allen Dingen unterhalten, die bei den Umgangskontakten dabei ist.
+
+[00:56 - 00:58] SPEAKER_01: Okay, dann würde ich die weitergeben.
+
+[00:58 - 00:59] SPEAKER_00: Ja, alles klar, danke.
+
+[01:01 - 01:02] SPEAKER_02: Ja, danke.
+
+[01:02 - 01:02] SPEAKER_UNKNOWN: 
+
+[01:02 - 01:02] SPEAKER_02: Guten Morgen, Herr Ritter.
+
+[01:02 - 01:04] SPEAKER_00: Ja, schönen guten Morgen, Herr Wassermann. Ich grüße Sie.
+
+[01:05 - 01:10] SPEAKER_00: Genau, ich weiß nicht, haben Sie eben schon mitgehört, als ich mein Anliegen erklärt habe, oder soll ich es nochmal wiederholen?
+
+[01:11 - 01:15] SPEAKER_02: Ich hatte jetzt die letzten Sätze mitbekommen, dass Sie nochmal gerne mit mir sprechen würden.
+
+[01:15 - 01:16] SPEAKER_02: Ja, genau.
+
+[01:16 - 01:23] SPEAKER_00: Ja, genau. Also ich bin ja mit einer Begutachtung beauftragt und in dem Rahmen spreche ich, wenn ich am Ende der Begutachtung bin, immer nochmal mit Fachkräften,
+
+[01:23 - 01:28] SPEAKER_00: die, sag ich mal, aus anderen Blickwinkeln nochmal die Familie erlebt haben.
+
+[01:28 - 01:29] SPEAKER_00: Und Sie haben ja, wenn das richtig in meinem Kalender steht,
+
+[01:30 - 01:32] SPEAKER_00: die Umgangskontakte begleitet, richtig?
+
+[01:33 - 01:37] SPEAKER_02: Genau, also die letzten, die stattgefunden haben, das waren jetzt drei Stück.
+
+[01:37 - 01:41] SPEAKER_00: Drei Stück, okay, alles klar. Das heißt, aktuell finden die nicht mehr statt, oder doch?
+
+[01:43 - 01:46] SPEAKER_02: Der nächste ist kommende Woche.
+
+[01:46 - 01:54] SPEAKER_00: Ja, okay, also ist, ja, okay, alles klar. Gut. Ich würde einfach so ein paar allgemeine Fragen nach Ihren Eindrücken stellen und das war es im Wesentlichen schon.
+
+[01:55 - 01:56] SPEAKER_00: Ja.
+
+[01:56 - 01:59] SPEAKER_00: Ja, genau. Also Sie sind immer permanent dabei.
+
+[02:00 - 02:00] SPEAKER_UNKNOWN: 
+
+[02:00 - 02:00] SPEAKER_00: Und dann überwacht er Kontakt.
+
+[02:01 - 02:02] SPEAKER_00: Genau.
+
+[02:02 - 02:09] SPEAKER_00: Ja, alles klar. Wie ist denn so Ihr Eindruck, wie sich Herr Baskako mit Loki so beschäftigt, einfach so ganz generell?
+
+[02:12 - 02:24] SPEAKER_02: Also ich würde sagen, also insgesamt ist ein Stück weit auch eine Entwicklung zu sehen, aber im Grunde ist es so, dass oft Loki so die Initiative ergreift und zum Spiel einlädt.
+
+[02:24 - 02:24] SPEAKER_02: Ja.
+
+[02:25 - 02:29] SPEAKER_02: Der Vater sich daran beteiligt, aber oft eher so, dass er sich dann auch mit der Familie beschäftigt.
+
+[02:29 - 02:29] SPEAKER_UNKNOWN: 
+
+[02:29 - 02:29] SPEAKER_UNKNOWN: 
+
+[02:29 - 02:31] SPEAKER_02: Ja, so eine beobachtende Rolle einlädt.
+
+[02:31 - 02:33] SPEAKER_00: Also wenig Eigenimpulse so.
+
+[02:34 - 02:42] SPEAKER_02: Bisschen so. Also er hat manchmal auch eigene Spielsachen dabei, wo er dann auch Impulse setzt und sagt, komm, wollen wir jetzt mit dem Ball spielen oder mit den Seifenblasen.
+
+[02:43 - 02:43] SPEAKER_02: Ja.
+
+[02:43 - 02:49] SPEAKER_02: Aber so im Spiel, wo Loki sagt dann, naja, jetzt würde ich gerne zum Beispiel mit dem Bagger spielen oder in der Küche.
+
+[02:49 - 02:49] SPEAKER_02: Ja.
+
+[02:49 - 02:50] SPEAKER_02: Ja.
+
+[02:50 - 02:58] SPEAKER_02: Das ist für ihn immer ein bisschen schwierig. Er begibt sich zwar mit dann auf Augenhöhe und setzt sich mit am Boden und ist mit dabei, aber jetzt will ich, dass er sich ins Spiel eindringt.
+
+[02:58 - 02:59] SPEAKER_00: Ja, okay, alles klar.
+
+[02:59 - 03:05] SPEAKER_00: Und ist Herr Baskako denn aber zuverlässig in der Wahrnehmung der Kontakte?
+
+[03:06 - 03:08] SPEAKER_02: Das kann man leider so nicht sagen.
+
+[03:09 - 03:10] SPEAKER_00: Da habe ich mir schon was gedacht.
+
+[03:10 - 03:20] SPEAKER_02: Also wir hatten jetzt insgesamt sieben Kontakte, die angestanden sind. Davon wurden, soweit ich weiß, zwei abgesagt und einer nicht wahrgenommen.
+
+[03:21 - 03:21] SPEAKER_02: Okay.
+
+[03:22 - 03:24] SPEAKER_02: Einer war mit Ihnen zusammen und zwei eben mit mir.
+
+[03:24 - 03:28] SPEAKER_00: Ah ja, okay, ach so, bei den dreien war ich da schon einer davon sogar. Okay.
+
+[03:29 - 03:29] SPEAKER_00: Genau.
+
+[03:31 - 03:38] SPEAKER_00: Das heißt, also einer wurde auch gar nicht abgesagt dann im Endeffekt und dann saßen Sie da mit versammelter Mannschaft und Herr Baskako ist nicht erschienen.
+
+[03:39 - 03:41] SPEAKER_02: Genau, das war am 15. Oktober.
+
+[03:41 - 03:42] SPEAKER_00: Ja, okay, alles klar.
+
+[03:45 - 03:59] SPEAKER_00: Gut, ja. Ich weiß nicht, wie kann sich Herr Baskako in dieses überwachte Setting einfinden? Also ich weiß gar nicht, geben Sie da auch aktiv noch so Anregungen oder Unterstützung oder sitzen Sie dann einfach dabei und passen so ein bisschen an?
+
+[03:59 - 03:59] SPEAKER_UNKNOWN: 
+
+[04:01 - 04:07] SPEAKER_02: Ja, also das ist ja, wenn man jetzt den gesamten Verlauf betrachtet, ist es ja schon eine sehr lange Zeit.
+
+[04:08 - 04:12] SPEAKER_02: Also der Herr Baskako hat ja Umgang seit Loki noch ein Säugling war.
+
+[04:12 - 04:13] SPEAKER_02: Ja, ja.
+
+[04:14 - 04:20] SPEAKER_02: Von daher ist es für ihn, glaube ich, auch relativ gewohnt, diese Umgangssituation, die begleitet wird.
+
+[04:21 - 04:21] SPEAKER_02: Ja.
+
+[04:22 - 04:26] SPEAKER_02: Es ist auch so, dass ich da nicht viele Impulse gebe und auch nicht geben muss.
+
+[04:26 - 04:26] SPEAKER_02: Ja.
+
+[04:26 - 04:29] SPEAKER_02: Also es ist jetzt keine kommende Zeit.
+
+[04:29 - 04:29] SPEAKER_UNKNOWN: 
+
+[04:29 - 04:34] SPEAKER_02: Es kommt jetzt nicht vor, dass es irgendwelche schwerwiegenden Situationen sind, wo ich eingreifen müsste.
+
+[04:34 - 04:34] SPEAKER_02: Ja.
+
+[04:34 - 04:36] SPEAKER_02: Also ich sitze dann eher beobachtend dabei.
+
+[04:37 - 04:39] SPEAKER_00: Und ein Thema, was immer mal wieder aufhört.
+
+[04:40 - 04:41] SPEAKER_00: Ja, erzählen Sie gerne mal.
+
+[04:41 - 04:50] SPEAKER_02: Ja, ich habe noch eine Kollegin, die Umgänge begleitet hat. Da gab es dann schon immer mal Situationen, wo Loki sich dann auch verletzt hat, weil der Vater dann ein bisschen unachtsam war.
+
+[04:50 - 04:53] SPEAKER_00: Ja, mit diesem Finger in der Tür klemmen und diese Geschichten, ne?
+
+[04:53 - 04:54] SPEAKER_02: Genau, ja.
+
+[04:54 - 04:55] SPEAKER_00: Ja, ja, habe ich gelesen, genau.
+
+[04:56 - 04:59] SPEAKER_00: Okay, das ist jetzt aber zuletzt nicht mehr so sehr vorgekommen.
+
+[05:01 - 05:04] SPEAKER_02: Ne, das war jetzt nicht, aber es gab auch keine Gelegenheit, sage ich mal.
+
+[05:04 - 05:05] SPEAKER_02: Ja, verstehe.
+
+[05:05 - 05:13] SPEAKER_02: Also es ist jetzt wirklich sehr schwierig, das einzuschätzen. Es war jetzt nicht so, dass wir irgendwie draußen am Spielplatz waren, wo es ein bisschen weniger strukturiert ist, das Setting.
+
+[05:13 - 05:13] SPEAKER_02: Ja, ja.
+
+[05:14 - 05:15] SPEAKER_02: Da weiß ich nicht, wie es da wäre.
+
+[05:15 - 05:18] SPEAKER_00: Okay, ja, okay. Ne, kann ich gut verstehen.
+
+[05:20 - 05:27] SPEAKER_00: War er mal, also der Vater mal irgendwie alkoholisiert oder irgendwie anders intoxiziert, nach Ihrem Eindruck, bei einem Termin?
+
+[05:28 - 05:28] SPEAKER_00: Ja.
+
+[05:29 - 05:32] SPEAKER_02: Ja, das ist mir jetzt so nicht direkt aufgefallen.
+
+[05:32 - 05:33] SPEAKER_00: Okay, alles klar. Gut.
+
+[05:34 - 05:39] SPEAKER_00: Genau, wie ist denn so, ich meine, der Kontakt geht immer eine Stunde oder anderthalb, wie viel waren das?
+
+[05:39 - 05:40] SPEAKER_00: Ich weiß es gar nicht.
+
+[05:40 - 05:41] SPEAKER_00: Eine Stunde.
+
+[05:41 - 05:52] SPEAKER_00: Eine Stunde, genau. Kümmern sich der Vater dann teilweise auch so um Pflege- oder Versorgungshandlungen, also Essen geben oder irgendwie, weiß ich nicht, Schmutz sauber machen an Loki oder irgendwie sowas in die Richtung?
+
+[05:53 - 05:57] SPEAKER_02: Ja, also gerade Versorgung mit Essen ist immer ein Thema, sage ich.
+
+[05:57 - 05:57] SPEAKER_02: Ja, ja, ja.
+
+[05:57 - 06:01] SPEAKER_02: Also er weiß auch, was Loki gerne mag, kommt immer schon mal mit so Puppenbrötchen mit.
+
+[06:01 - 06:01] SPEAKER_02: Ja.
+
+[06:02 - 06:05] SPEAKER_02: Und das hat für ihn auch einen hohen Stellenwert, würde ich mal sagen.
+
+[06:05 - 06:05] SPEAKER_02: Ja.
+
+[06:06 - 06:13] SPEAKER_02: Also das passiert auch meistens gleich ganz am Anfang, dass er erzählt, was er wieder dabei hat und dass er da sich kümmert, genau.
+
+[06:13 - 06:23] SPEAKER_00: Ja, okay. Und haben Sie den Eindruck, dass der Vater da so altersgerechte Beschäftigungen mit Loki findet oder fordert er ihn etwas zu wenig, nach Ihrer Einschätzung?
+
+[06:27 - 06:31] SPEAKER_02: Ja, gut, das ist natürlich schwierig einzuschätzen, weil er allgemein ja nicht so viele Impulse gibt.
+
+[06:31 - 06:32] SPEAKER_02: Ja, ja.
+
+[06:34 - 06:45] SPEAKER_02: Also was mir nur aufgefallen ist, dass wenn Loki selbst ein Spiel, zum Beispiel ein Rollenspiel an der Küche oder so initiiert, dass der Vater da einfach nicht gut drauf eingehen kann.
+
+[06:45 - 06:46] SPEAKER_02: Ah, ja.
+
+[06:46 - 06:51] SPEAKER_02: Und dann eben mit etwas anderem, wie zum Beispiel mit einem Ball oder sowas, ich glaube, das ist etwas, womit er selber auch mehr anfangen kann.
+
+[06:51 - 06:52] SPEAKER_00: Ja, ja, verstehe.
+
+[06:52 - 06:54] SPEAKER_02: Und dann anderes anbietet.
+
+[06:54 - 06:55] SPEAKER_00: Ja, okay.
+
+[06:55 - 06:57] SPEAKER_00: Nee, genau, das wäre so ein, das wäre auch so ein Punkt. Ja, okay.
+
+[06:57 - 06:57] SPEAKER_00: Ja, okay.
+
+[06:57 - 06:58] SPEAKER_00: Alles klar.
+
+[07:00 - 07:00] SPEAKER_00: Gut.
+
+[07:02 - 07:06] SPEAKER_00: So, der allgemeine Pflegezustand von Loki, wie nehmen Sie den so wahr?
+
+[07:08 - 07:09] SPEAKER_02: Unauffällig, würde ich sagen.
+
+[07:09 - 07:10] SPEAKER_00: Unauffällig, okay.
+
+[07:11 - 07:14] SPEAKER_00: Sind Ihnen zufällig mal die Zähne bei Loki aufgefallen?
+
+[07:17 - 07:19] SPEAKER_02: Das weiß ich nicht, mir ist nichts bekannt.
+
+[07:19 - 07:20] SPEAKER_00: Okay, alles klar, wunderbar.
+
+[07:20 - 07:24] SPEAKER_00: Ich hatte nur, wann hatte ich einen Hausbesuch? Gestern nochmal oder vorgestern?
+
+[07:24 - 07:27] SPEAKER_00: Und da waren mir, nach meinem Eindruck, waren die Zähne recht auf.
+
+[07:27 - 07:27] SPEAKER_00: Ja, ja, ja.
+
+[07:27 - 07:27] SPEAKER_UNKNOWN: 
+
+[07:27 - 07:27] SPEAKER_UNKNOWN: 
+
+[07:27 - 07:27] SPEAKER_UNKNOWN: 
+
+[07:27 - 07:27] SPEAKER_UNKNOWN: 
+
+[07:27 - 07:27] SPEAKER_UNKNOWN: 
+
+[07:27 - 07:27] SPEAKER_00: Aber, das ist ja auch ein bisschen, ich weiß nicht, das ist ein bisschen karriös.
+
+[07:27 - 07:30] SPEAKER_00: Konnte sein, dass Ihnen das mal schon aufgefallen ist.
+
+[07:30 - 07:35] SPEAKER_00: Aber klar, sie sitzen ja auch nicht so mit auf Boden nah am Kind, wie ich das dann in meinen
+
+[07:36 - 07:38] SPEAKER_00: kurzen Sequenzen, wo ich das Kind explorieren muss, mache.
+
+[07:38 - 07:42] SPEAKER_00: Ich hatte es nur einmal mitgeschnitten, weil natürlich die Mutterseite und die Schwester,
+
+[07:42 - 07:47] SPEAKER_00: die immer mit ist, da auch nicht so, ja, maßgeblich gepflegt ist da immer.
+
+[07:49 - 07:56] SPEAKER_00: Wie ist es denn, ist Loki da sehr auf seine Mama oder seine Schwester bezogen oder hält er die Zeit mit dem Vater gut durch?
+
+[07:58 - 08:05] SPEAKER_02: Die Zeit hält er sehr gut durch. Es ist tatsächlich so, meistens kommt die ganze Familie ein Stück weit früher schon, so eine Stunde vor dem Umgang.
+
+[08:06 - 08:10] SPEAKER_02: Und Loki räuchert dann immer schon auf jedes Geräusch, wann der Papa endlich kommt.
+
+[08:10 - 08:17] SPEAKER_02: Er freut sich da auf die Kontakte und wartet drauf und kann auch die Zeit dann gut durchhalten.
+
+[08:18 - 08:20] SPEAKER_02: Das heißt, beim letzten Kontakt ein bisschen anders.
+
+[08:21 - 08:27] SPEAKER_02: Hat er dann zehn Minuten vor Ende schon für sich entschieden, dass es genug ist, dass er den Vater verbringen möchte.
+
+[08:27 - 08:33] SPEAKER_02: Aber es ist jetzt nicht so, dass es ein permanentes Thema ist, dass er die Zeit nicht mit seinem Vater verbringen will.
+
+[08:33 - 08:39] SPEAKER_00: Okay, also die Frage, die hinter meiner Überlegung steht, ist, ob es auch sinnig wäre,
+
+[08:39 - 08:40] SPEAKER_00: bevor man jetzt die Kontakte schon unternimmt,
+
+[08:40 - 08:47] SPEAKER_00: unbegleitet macht, ob man einfach auch mal die Zeit ausweitet, um zu schauen, hält Loki oder ihr Vater es auch über einen längeren Zeitraum durch.
+
+[08:47 - 08:52] SPEAKER_00: Wäre sowas von Ihrer Seite, wenn das Gericht das beschließt, zu bewerkstelligen?
+
+[08:55 - 08:58] SPEAKER_02: Ja, soweit ich weiß, hatten wir das schon mal, dass das ausgeweitet wurde.
+
+[08:59 - 08:59] SPEAKER_02: Ah ja, okay.
+
+[08:59 - 09:01] SPEAKER_02: Wir haben das auch begleitet.
+
+[09:02 - 09:08] SPEAKER_02: Es ist natürlich von unserer Seite eigentlich so, dass wir maximal zehn Umgänge begleiten.
+
+[09:08 - 09:10] SPEAKER_02: Wenn man das so hinauszieht, dann ist das schon.
+
+[09:10 - 09:16] SPEAKER_02: Es ist schon sehr viel passiert, was bei uns vor allem noch dazu kommt, dass einfach viele Termine nicht wahrgenommen werden.
+
+[09:16 - 09:17] SPEAKER_02: Ja, ja, klar.
+
+[09:18 - 09:22] SPEAKER_02: Und gerade wenn es dann um so lange Zeiten geht, könnte es natürlich schwierig werden.
+
+[09:22 - 09:23] SPEAKER_00: Ja, nachvollziehbar, nachvollziehbar.
+
+[09:23 - 09:27] SPEAKER_00: Okay, also eher tendenziell eher ungünstig.
+
+[09:27 - 09:28] SPEAKER_00: Ja.
+
+[09:28 - 09:29] SPEAKER_00: Okay, gut.
+
+[09:30 - 09:31] SPEAKER_00: Gut.
+
+[09:33 - 09:40] SPEAKER_00: Genau, die Frage ist ja im Raum, ob dann Kontakte generell gelockert oder ausgeweitet werden.
+
+[09:40 - 09:45] SPEAKER_00: Und vor allen Dingen diese Gefahrenerkennung macht ja besonders Sorgen in dem Sinne.
+
+[09:46 - 09:48] SPEAKER_00: Konnten Sie das im Rahmen der Kontakte mal mit dem Vater thematisieren?
+
+[09:48 - 09:51] SPEAKER_00: Wurde das auch irgendwie nachbesprochen oder so?
+
+[09:51 - 09:54] SPEAKER_00: Oder werden die Kontakte überhaupt nachbesprochen oder vorbesprochen oder sowas?
+
+[09:56 - 10:04] SPEAKER_02: Also wie gesagt, die Situation, wo es tatsächlich der Anführungsbedarf gab, war in der Vergangenheit, wie gesagt, mit meiner Kollegin.
+
+[10:05 - 10:05] SPEAKER_02: Ja.
+
+[10:06 - 10:08] SPEAKER_02: Soweit ich weiß, wurde das dann natürlich auch nachbesprochen.
+
+[10:08 - 10:14] SPEAKER_02: Und auch mit dem Vater noch mal thematisiert, in welchen Situationen er achtsamer sein muss.
+
+[10:14 - 10:16] SPEAKER_00: Ja, ja, ja, okay, alles klar.
+
+[10:16 - 10:16] SPEAKER_00: Gut.
+
+[10:19 - 10:26] SPEAKER_00: Ja, haben Sie denn das Gefühl, dass Herr Baskakow sich generell dann auf so Vorgaben, die man ihm macht, einigermaßen gut einlassen kann?
+
+[10:26 - 10:28] SPEAKER_00: Also nimmt er das an, kann er es umsetzen?
+
+[10:30 - 10:34] SPEAKER_02: Das kann ich nicht einschätzen, weil ich da ihm jetzt keine Vorgaben gemacht hatte.
+
+[10:34 - 10:36] SPEAKER_00: Ja, alles klar, kein Problem.
+
+[10:37 - 10:37] SPEAKER_00: Gut.
+
+[10:37 - 10:43] SPEAKER_00: Gab es da irgendwelche Spannungen zwischen den Eltern selber, die mal beobachtet wurden im Kontext dieser begleiteten Settings?
+
+[10:46 - 10:48] SPEAKER_02: Ja, soweit ich weiß, in der Vergangenheit auf jeden Fall.
+
+[10:49 - 10:49] SPEAKER_02: Ja.
+
+[10:51 - 10:56] SPEAKER_02: Jetzt die Zeit, die ich überblicken kann, das ging relativ gut.
+
+[10:56 - 11:00] SPEAKER_02: Also wir haben das ja sowieso nur kurz gesehen, zur Übergabe im Wartezimmer.
+
+[11:00 - 11:00] SPEAKER_02: Okay.
+
+[11:01 - 11:06] SPEAKER_02: Ich glaube auch, dass da die Eltern auch schon ein Stück weit sich weiterentwickelt haben.
+
+[11:06 - 11:07] SPEAKER_00: Ja, alles klar.
+
+[11:07 - 11:08] SPEAKER_00: Okay.
+
+[11:08 - 11:10] SPEAKER_02: Nur das, was ich jetzt so gesehen habe.
+
+[11:10 - 11:11] SPEAKER_02: Ja.
+
+[11:11 - 11:23] SPEAKER_02: Also wie das jetzt wäre, wenn Sie zum Beispiel sagen würden, wenn wir das ausweiten und dass die Eltern das selber in der Übergabe gestalten müssen, das weiß ich auch nicht, wie gut das laufen kann.
+
+[11:23 - 11:23] SPEAKER_02: Ja, klar.
+
+[11:23 - 11:28] SPEAKER_02: Das wäre höchstens auch was, was wir anbieten könnten, dass wir die Übergabe zum Beispiel hier bei uns machen.
+
+[11:28 - 11:28] SPEAKER_00: Ah, okay.
+
+[11:29 - 11:31] SPEAKER_02: Und dann selbst organisieren.
+
+[11:31 - 11:32] SPEAKER_00: Ja, gut zu wissen.
+
+[11:32 - 11:33] SPEAKER_00: Ja, alles klar.
+
+[11:34 - 11:34] SPEAKER_00: Okay.
+
+[11:35 - 11:36] SPEAKER_00: Gut.
+
+[11:36 - 11:39] SPEAKER_00: Ich glaube, das war es, Herr Wassermann.
+
+[11:39 - 11:43] SPEAKER_00: Ich habe jetzt selber aktuell keine Fragen mehr im Kopf zumindest.
+
+[11:43 - 11:44] SPEAKER_00: Aber doch vielleicht eine noch.
+
+[11:44 - 11:50] SPEAKER_00: Gibt es irgendwelche Bereiche, die Ihnen bei Loki aufgefallen wären, wo die Entwicklung noch nicht altersgerecht ist?
+
+[11:57 - 12:00] SPEAKER_02: Also nicht gravierend, würde ich sagen.
+
+[12:00 - 12:00] SPEAKER_02: Mhm.
+
+[12:02 - 12:05] SPEAKER_02: Ganz schwer einschätzen, weil ich aktuell bin.
+
+[12:05 - 12:05] SPEAKER_02: Ja.
+
+[12:06 - 12:07] SPEAKER_02: Ich habe noch keine Vergleiche zum Beispiel.
+
+[12:07 - 12:07] SPEAKER_02: Ja, okay.
+
+[12:07 - 12:08] SPEAKER_00: Kein Problem.
+
+[12:08 - 12:09] SPEAKER_00: Kein Problem.
+
+[12:09 - 12:11] SPEAKER_00: Ich fand ihn eigentlich auch recht gut entwickelt.
+
+[12:11 - 12:11] SPEAKER_00: Also deswegen.
+
+[12:12 - 12:18] SPEAKER_00: Aber es konnte ja sein, dass Ihnen da, wenn Sie da regelmäßig über einen Termin dabei sind, noch mehr aufgefallen ist, weil Sie da einfach mehr Zeit mit dem Kind verbringen.
+
+[12:19 - 12:21] SPEAKER_00: Aber genau, ich habe jetzt auch nichts besorgniserregendes in dem Sinne gemerkt.
+
+[12:23 - 12:23] SPEAKER_00: Okay.
+
+[12:24 - 12:29] SPEAKER_00: Gibt es von Ihrer Seite aus noch einen Aspekt, wo Sie sagen würden, der ist wichtig und darüber haben wir noch gar nicht gesprochen?
+
+[12:31 - 12:33] SPEAKER_02: In der Ehezeit wäre es aktuell nicht rein.
+
+[12:33 - 12:35] SPEAKER_02: Ich denke, das war jetzt so um alles.
+
+[12:35 - 12:35] SPEAKER_00: Ja.
+
+[12:35 - 12:35] SPEAKER_00: Wunderbar.
+
+[12:35 - 12:39] SPEAKER_00: Dann vielen Dank für Ihre Zeit am frühen Morgen und dann wünsche ich Ihnen noch einen schönen Arbeitstag.
+
+[12:40 - 12:41] SPEAKER_02: Danke wünsche ich Ihnen auch.
+
+[12:41 - 12:41] SPEAKER_00: Danke sehr.
+
+[12:42 - 12:42] SPEAKER_00: Tschüss.
+
