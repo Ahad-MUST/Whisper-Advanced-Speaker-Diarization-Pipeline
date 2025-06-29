@@ -1,0 +1,106 @@
+# requirements.txt - Whisper + SpeechBrain Speech Diarization Pipeline
+# Complete dependency list for offline speech processing
+
+# ===== CORE DEEP LEARNING FRAMEWORKS =====
+# PyTorch - Install with CUDA support for GPU acceleration
+torch>=2.0.0
+torchaudio>=2.0.0
+torchvision>=0.15.0
+
+# ===== SPEECH PROCESSING ENGINES =====
+# OpenAI Whisper for speech recognition
+openai-whisper>=20231117
+
+# SpeechBrain for speaker diarization and embeddings
+speechbrain>=0.5.16
+
+# HuggingFace libraries for model management
+transformers>=4.35.0
+huggingface-hub>=0.17.0
+datasets>=2.14.0
+accelerate>=0.24.0
+
+# ===== AUDIO PROCESSING LIBRARIES =====
+# Core audio processing
+librosa>=0.10.1
+soundfile>=0.12.1
+audioread>=3.0.1
+
+# Audio format support
+pydub>=0.25.1
+
+# Advanced audio processing
+scipy>=1.11.0
+numpy>=1.24.0
+
+# ===== MACHINE LEARNING UTILITIES =====
+# Clustering and ML algorithms
+scikit-learn>=1.3.0
+
+# ===== DATA PROCESSING =====
+# Data manipulation and analysis
+pandas>=2.1.0
+
+# Excel file support
+openpyxl>=3.1.2
+xlsxwriter>=3.1.0
+
+# ===== UTILITY LIBRARIES =====
+# Progress bars and UI
+tqdm>=4.66.0
+
+# Path and file handling
+pathlib2>=2.3.7
+
+# Configuration management
+omegaconf>=2.3.0
+
+# ===== DEVELOPMENT AND TESTING =====
+# Testing framework
+pytest>=7.4.0
+
+# Code quality
+black>=23.0.0
+flake8>=6.0.0
+
+# ===== OPTIONAL ENHANCEMENTS =====
+# Plotting and visualization (optional)
+matplotlib>=3.7.0
+
+# Advanced numerical operations
+numba>=0.58.0
+
+# Memory profiling (development)
+memory-profiler>=0.61.0
+
+# ===== INSTALLATION NOTES =====
+# 
+# STEP 1: Install PyTorch with CUDA support first
+# For CUDA 11.8 (RTX 4090/4060):
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# 
+# For CUDA 12.1 (newer systems):
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# 
+# For CPU only:
+#   pip install torch torchvision torchaudio
+#
+# STEP 2: Install this requirements file
+#   pip install -r requirements.txt
+#
+# STEP 3: Run verification
+#   python verify_setup.py
+#
+# ===== SYSTEM REQUIREMENTS =====
+# - Python 3.8+ (recommended: 3.9 or 3.10)
+# - CUDA 11.8+ for GPU acceleration (optional but recommended)
+# - 8GB+ RAM (16GB+ recommended)
+# - 4GB+ GPU VRAM for large models
+# - 10GB+ free disk space for models
+
+# ===== TROUBLESHOOTING =====
+# If you encounter issues:
+# 1. Update pip: python -m pip install --upgrade pip
+# 2. Install packages individually if batch install fails
+# 3. Use --no-cache-dir flag if disk space is limited
+# 4. For M1 Mac: use conda instead of pip for some packages
